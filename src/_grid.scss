@@ -1,0 +1,79 @@
+@use 'sass:math';
+
+$nbCols: 12;
+$breakpoints: (
+  xs: 0px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+  
+.container {
+  margin: auto;
+
+  @media (min-width: 1400px) {
+    width: 1320px;
+  }
+  
+  @media (max-width: 1400px) {
+    width: 1140px;
+  }
+  
+  @media (max-width: 1200px) {
+    width: 960px;
+  }
+  
+  @media (max-width: 992px) { 
+    width: 720px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 540px;
+  }
+  
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    
+    @for $i from 1 through $nbCols {
+      .col-#{$i} {
+        width: (math.div(100%, $nbCols) * $i);
+        max-width: (math.div(100%, $nbCols) * $i);
+      }
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .d-block {
+      display: block;
+    }
+    
+    @each $breakpoint, $width in $breakpoints {
+      @media (min-width: #{$width}) {
+        .d-#{$breakpoint}-none {
+          display: none;
+        }
+
+        .d-#{$breakpoint}-block {
+          display: block;
+        }
+
+        @for $i from 1 through $nbCols {
+          .col-#{$breakpoint}-#{$i} {
+            width: math.div($i, $nbCols) * 100%;
+            max-width: math.div($i, $nbCols) * 100%;
+          }
+        }
+      }
+    }
+    
+  }
+}
