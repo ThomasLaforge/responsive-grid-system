@@ -15,28 +15,23 @@ $breakpoints: (
   flex-direction: column;
   margin: auto;
 
-  @media (min-width: 1400px) {
-    width: 1320px;
+  @media (min-width: 0px) {
+    width: 100%;
   }
-  
-  @media (max-width: 1400px) {
-    width: 1140px;
-  }
-  
-  @media (max-width: 1200px) {
-    width: 960px;
-  }
-  
-  @media (max-width: 992px) { 
-    width: 720px;
-  }
-  
-  @media (max-width: 768px) {
+  @media (min-width: 576px) {
     width: 540px;
   }
-  
-  @media (max-width: 576px) {
-    width: 100%;
+  @media (min-width: 768px) { 
+    width: 720px;
+  }
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    width: 1320px;
   }
 
   .row {
