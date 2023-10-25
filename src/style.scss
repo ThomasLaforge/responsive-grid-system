@@ -1,49 +1,10 @@
+@use './reset';
+@use './colors';
 @use './grid';
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
 
 .app {
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: auto;
-}
-
-.color {
-  height: 100px;
-  border: 2px solid white;
-}
-
-.green {
-  @extend .color;
-  background-color: green;
-}
-
-.red {
-  @extend .color;
-  background-color: rgb(185, 49, 49);
-}
-
-.blue {
-  @extend .color;
-  background-color: rgb(35, 95, 134);
-}
-
-.yellow {
-  @extend .color;
-  height: 200px;
-  background-color: rgb(214, 144, 59);
-}
-
-.purple {
-  @extend .color;
-  background-color: rgb(188, 51, 170);
 }
